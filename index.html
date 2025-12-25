@@ -3,25 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход через GitHub и Яндекс</title>
+    <title>Вход через GitHub, Яндекс и Telegram</title>
 </head>
 <body>
-    <h1>Вход через GitHub и Яндекс</h1>
+    <h1>Вход через GitHub, Яндекс и Telegram</h1>
     <button onclick="loginWithGitHub()">Войти через GitHub</button>
     <button onclick="loginWithYandex()">Войти через Яндекс</button>
+    <button onclick="loginWithTelegram()">Войти через Telegram</button>
 
     <script>
         function loginWithGitHub() {
             const clientId = 'Ov23li8JYLTiKMjXAOyf';
             const scope = 'user:email';
+
             const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&&scope=${scope}`;
             window.location.href = authUrl;
         }
 
         function loginWithYandex() {
-            const clientId = '0fe10c40cbf74d518aee87ea941f094a';
+            const clientId = 'YOUR_YANDEX_CLIENT_ID';
+            const redirectUri = 'https://yourwebsite.com/callback';
 
             const authUrl = `https://oauth.yandex.ru/authorize?response_type=code&client_id=${clientId}`;
+            window.location.href = authUrl;
+        }
+
+        function loginWithTelegram() {
+            const botId = '8272788325:AAH0Wg62NRDk6MoMNwEBeuljPH3QDD_thX8';
+
+            const authUrl = `https://oauth.telegram.org/authorize?bot_id=${botId}`;
             window.location.href = authUrl;
         }
     </script>

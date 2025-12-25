@@ -9,9 +9,13 @@
     <h1>Вход через GitHub, Яндекс и Telegram</h1>
     <button onclick="loginWithGitHub()">Войти через GitHub</button>
     <button onclick="loginWithYandex()">Войти через Яндекс</button>
-    <button onclick="loginWithTelegram()">Войти через Telegram</button>
 
     <script>
+        <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="Регистрация" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+<script type="text/javascript">
+function onTelegramAuth(user) {
+    alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');\
+</script>
         function loginWithGitHub() {
             const clientId = 'Ov23li8JYLTiKMjXAOyf';
             const scope = 'user:email';
@@ -21,8 +25,7 @@
         }
 
         function loginWithYandex() {
-            const clientId = 'YOUR_YANDEX_CLIENT_ID';
-            const redirectUri = 'https://yourwebsite.com/callback';
+            const clientId = '0fe10c40cbf74d518aee87ea941f094a';
 
             const authUrl = `https://oauth.yandex.ru/authorize?response_type=code&client_id=${clientId}`;
             window.location.href = authUrl;

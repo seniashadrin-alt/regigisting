@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход через GitHub</title>
+    <title>Вход через GitHub и Яндекс</title>
 </head>
 <body>
-    <h1>Вход через GitHub</h1>
+    <h1>Вход через GitHub и Яндекс</h1>
     <button onclick="loginWithGitHub()">Войти через GitHub</button>
+    <button onclick="loginWithYandex()">Войти через Яндекс</button>
 
     <script>
         function loginWithGitHub() {
             const clientId = 'Ov23li8JYLTiKMjXAOyf';
             const scope = 'user:email';
 
-            const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=${scope}`;
+            const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
+            window.location.href = authUrl;
+        }
+
+        function loginWithYandex() {
+            const clientId = '0fe10c40cbf74d518aee87ea941f094a';
+
+            const authUrl = `https://oauth.yandex.ru/authorize?response_type=code&client_id=${clientId}`;
             window.location.href = authUrl;
         }
     </script>

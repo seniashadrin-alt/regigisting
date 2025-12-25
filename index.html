@@ -14,7 +14,7 @@
         function loginWithGitHub() {
             const clientId = 'Ov23li8JYLTiKMjXAOyf';
             const scope = 'user:email';
-
+            const redirectUri = 'https://seniashadrin-alt.github.io/regigisting/'
             const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
             window.location.href = authUrl;
         }

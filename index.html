@@ -14,7 +14,7 @@
         function loginWithGitHub() {
             const clientId = 'Ov23li8JYLTiKMjXAOyf';
             const scope = 'user:email';
-            const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&scope=${scope}`;
+            const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&&scope=${scope}`;
             window.location.href = authUrl;
         }
 

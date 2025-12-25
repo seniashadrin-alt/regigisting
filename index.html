@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход через GitHub</title>
+</head>
+<body>
+    <h1>Вход через GitHub</h1>
+    <button onclick="loginWithGitHub()">Войти через GitHub</button>
+
+    <script>
+        function loginWithGitHub() {
+            const clientId = 'YOUR_CLIENT_ID';
+            const redirectUri = 'https://yourwebsite.com/callback';
+            const scope = 'user:email';
+
+            const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
+            window.location.href = authUrl;
+        }
+    </script>
+</body>
+</html>
